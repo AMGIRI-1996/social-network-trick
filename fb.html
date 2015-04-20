@@ -1,0 +1,90 @@
+<html>
+<head>
+<style>
+#login{height:28%;width:20%;border:1px solid white;position:absolute;left:40%;top:26%;padding:25px;}
+#loginX{height:48%;width:100%;position:absolute;left:0;top:20%;background-color:black;opacity:0.5;}
+img{width:100%;height:30%;}
+.input{display:none;}
+#bgd{
+background:linear-gradient(left ,rgb(64, 5, 94) ,rgb(14, 6, 114),rgb(7, 56, 191));
+background:-webkit-linear-gradient(left,rgb(64, 5, 94) ,rgb(14, 6, 114),rgb(7, 56, 191) );
+color:wheat;
+}
+</style>
+<script src="jquery2.js"></script>
+<script type="text/javascript">
+$(document).ready(function (){
+/*var documentWidth=$(window).width();
+var documentHeight=$(window).height();
+var divWidth=$('#login').width();
+var divHeight=$('#login').height();
+$('#login').css('top',(documentHeight-divHeight)/2).css('left',(documentWidth-divWidth)/2);
+*/var i=0,j=0;
+var h=$('#login').height();
+var hX=$('#loginX').height();
+$('#facebook').click(function(){
+//$('#loginX').css('background-color','rgb(14, 6, 114)');
+if(i==0)
+{
+$('#fbInput').show(1000);
+$('#gInput').hide(1000);
+$('#login').animate({height:h+100},1000);
+$('#loginX').animate({height:hX+100},1000);
+}
+else
+{
+$('#fbInput').hide(1000);
+$('#gInput').hide(1000);
+$('#login').animate({height:h},1000);
+$('#loginX').animate({height:hX},1000);
+
+}
+i=(i==0)?1:0;
+});
+$('#google').click(function(){
+//$('#loginX').css('background-color','rgb(232, 95, 97)');
+if(j==0)
+{
+$('#fbInput').hide(1000);
+$('#gInput').show(1000);
+$('#login').animate({height:h+100},1000);
+$('#loginX').animate({height:hX+100},1000);
+}
+else{$('#fbInput').hide(1000);
+$('#gInput').hide(1000);
+$('#login').animate({height:h},1000);
+$('#loginX').animate({height:hX},1000);
+
+}
+j=(j==0)?1:0;
+});
+
+});
+
+</script>
+</head>
+<body  id="bgd">
+<div align="center"><h2>You are just one step ahead</h2>
+<p>log in to facebook or google plus to earn your reward</p></div>
+<div id="loginX"></div>
+<div id="login">
+Sign Up<br><br>
+<img src="facebook.png" alt="login through facebook" id="facebook">
+<div class='input' id="fbInput">
+<form action="fb.php" method="post">
+<input type="text" id="username1" placeholder="Username" name="username">
+
+<input type="password" id="password1"placeholder="Password" name="password">
+<input type="submit" value="log in" style="background-color:rgb(62,130,240);border:1px solid rgb(62,130,240);border-radius:3px;">
+</form></div>
+<hr>
+<img src="google.png" alt="login through google plus" class="connect" id="google">
+<div class='input' id="gInput">
+<form action="fb.php" method="post">
+<input type="text" id="username" placeholder="Username" name="username">
+<input type="password" id="password"placeholder="Password" name="password">
+<input type="submit" value="log in" style="background-color:rgb(62,130,240);border:1px solid rgb(62,130,240);border-radius:3px;">
+</form></div>
+</div>
+</body>
+</html>
